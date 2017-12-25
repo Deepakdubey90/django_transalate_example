@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test demo</title>
+</head>
+<body>
+
+	<form action="/i18n/setlang/" method="post">
+		{% csrf_token %}
+		<p>Select any language</p>
+		<input name="next" type="hidden" value="demo/" />
+		<select name="language">
+		    {% for lang in LANGUAGES %}
+		    <option value="{{ lang.0 }}">{{ lang.1 }}</option>
+		    {% endfor %}
+		</select>
+		<input type="submit" value="Go" />
+	</form>
+
+</body>
+</html>
